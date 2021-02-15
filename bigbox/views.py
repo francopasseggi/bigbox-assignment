@@ -4,6 +4,9 @@ from django.views.generic import ListView, DetailView
 from django.shortcuts import render, redirect
 
 
+def home(request):
+    return render(request, 'bigbox/home.html')
+
 def search_form(request):
     # Se que agregar los slugs en el context para facilitar la busqueda por slug no es requerido por la consigna.
     context = { 'slugs': Box.objects.all().values('slug') }
