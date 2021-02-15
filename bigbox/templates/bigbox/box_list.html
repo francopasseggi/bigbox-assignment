@@ -1,0 +1,29 @@
+{% extends "bigbox/base.html" %}
+
+{% block content %}
+
+    <div class="list-group">
+
+        {% for object in object_list %}
+
+            <a href="{% url 'box-detail' object.pk %}" class="list-group-item list-group-item-action">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">{{ object.name }}</h5>
+                    <small>${{ object.price }}</small>
+                </div>
+                <p class="mb-1">{{object.description|striptags}}</p>
+                <small>
+                    {% if object.purchase_available %}
+                      Venta individual disponibles
+                    {% else %}
+                      Venta individual no disponible
+                    {% endif %}
+                    
+                </small>
+            </a>
+
+        {% endfor %}
+
+    </div>
+    
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends "bigbox/base.html" %}
+
+{% block content %}
+<h1>Buscar</h1>
+
+{% if error %}
+    <div class="alert alert-danger" role="alert">
+        {{error}}
+    </div>
+{% endif %}
+
+<form method="GET">
+    {% csrf_token %}
+    <label for="search" class="form-label">Buscar box</label>
+    <input class="form-control"  name="q" type="text" list="datalistOptions" id="search" placeholder="Escribi para buscar...">
+    <datalist id="datalistOptions">
+        {% for slug in slugs  %}
+        <option value="{{ slug.slug }}">
+        {% endfor %}
+    </datalist>
+
+    <button type="submit" class="mt-2 btn btn-primary">Buscar</button>
+
+</form>
+
+{% endblock content %}

@@ -1,0 +1,48 @@
+{% extends "bigbox/base.html" %}
+
+{% block content %}
+
+    <div class="list-group">
+
+        <h1>{{ object.name }}</h1>
+        <p>{{ object.description|striptags }}</p>
+
+        <section>
+            <h4>Precio</h4>
+            ${{ object.price}}
+        </section>
+
+        <section>
+            <h4>Actividades</h4>
+
+            <div class="list-group">
+    
+                {% for activity in object.activities.all|slice:":5" %}
+    
+        
+                    <a href="{% url 'activity-detail' activity.pk %}" class="list-group-item list-group-item-action">
+                        {{ activity.name }}
+                    </a>
+        
+                {% endfor %}
+        
+            </div>
+
+            <a href=" {% url 'box-activity' object.pk %} ">Ver todas las actividades</a>
+        </section>
+
+        <section class="mt-2">
+            <h4>Informacion adicional</h4>
+            <p>
+                {% if object.purchase_available %}
+                    Venta individual disponibles
+                {% else %}
+                    Venta individual no disponible
+                {% endif %}
+            </p>
+        </section>
+
+
+    </div>
+    
+{% endblock content %}
