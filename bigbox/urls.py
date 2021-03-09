@@ -1,9 +1,7 @@
-import debug_toolbar
 from django.urls import path, include
 from .views import BoxList, BoxDetail, ActivityList, ActivityDetail, search_form, home
 
 urlpatterns = [
-    path('__debug__/', include(debug_toolbar.urls)),
     path('', home, name='home'),
     path('search/', search_form, name='box-search'),
     path('box/', BoxList.as_view(), name='box-list'),
