@@ -2,6 +2,7 @@ from django.http import Http404
 from .models import Box, Activity
 from django.views.generic import ListView, DetailView
 from django.shortcuts import render, redirect
+from django.conf import settings
 
 
 def home(request):
@@ -34,7 +35,7 @@ class BoxDetail(DetailView):
 
 class ActivityList(ListView):
     model = Activity
-    paginate_by=20
+    paginate_by = settings.ACTIVITY_LIST_PAGINATOR
 
     def get_queryset(self):
         queryset = self.model.objects.filter(box__pk=self.kwargs['pk'])
