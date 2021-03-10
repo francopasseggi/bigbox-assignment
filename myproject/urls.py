@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('bigbox.urls')),
     path('polls/', include('polls.urls')),
-    path('quickstart/', include('quickstart.urls'))
+    path('quickstart/', include('quickstart.urls')),
+    path('snippets/', include('snippets.urls')),
 ]

@@ -33,6 +33,8 @@ INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'rest_framework',
     'quickstart',
+    'snippets.apps.SnippetsConfig',
+    
 ]
 
 MIDDLEWARE = [
