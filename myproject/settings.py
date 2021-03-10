@@ -124,8 +124,7 @@ INTERNAL_IPS = [
     '127.0.0.1',
 ]
 
-# ACTIVITY_LIST_PAGINATOR = int(os.environ.get('ACTIVITY_LIST_PAGINATOR', '20'))
-ACTIVITY_LIST_PAGINATOR = int(os.environ.get('ACTIVITY_LIST_PAGINATOR'))
+ACTIVITY_LIST_PAGINATOR = int(os.environ.get('ACTIVITY_LIST_PAGINATOR', '20'))
 
 
 django_heroku.settings(locals())
