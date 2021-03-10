@@ -22,3 +22,5 @@ sqlparse==0.4.1
 traitlets==4.3.3
 wcwidth==0.2.5
 whitenoise==5.2.0
+djangorestframework==3.12.2
+pygments==2.8.1
