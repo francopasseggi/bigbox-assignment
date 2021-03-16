@@ -25,3 +25,7 @@ urlpatterns = [
     path('quickstart/', include('quickstart.urls')),
     path('snippets/', include('snippets.urls')),
 ]
+
+urlpatterns += [
+    path('api-auth/', include('rest_framework.urls')),
+]
