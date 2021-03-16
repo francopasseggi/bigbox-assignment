@@ -5,10 +5,10 @@ from django.urls import path, include
 urlpatterns = [
     path('__debug__/', include(debug_toolbar.urls)),
     path('admin/', admin.site.urls),
-    path('', include('bigbox.urls')),
+    path('bigbox', include('bigbox.urls')),
     path('polls/', include('polls.urls')),
     path('quickstart/', include('quickstart.urls')),
-    path('snippets/', include('snippets.urls')),
+    path('', include('snippets.urls')),
 ]
 
 urlpatterns += [
