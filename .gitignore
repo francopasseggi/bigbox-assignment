@@ -4,3 +4,4 @@ db.sqlite3
 secret_key
 **/__pycache__
 .vscode
+ignore
