@@ -6,6 +6,7 @@ from rest_framework import generics, permissions, renderers, viewsets
 from rest_framework.decorators import api_view, action
 from rest_framework.response import Response
 from rest_framework.reverse import reverse
+from rest_framework.pagination import LimitOffsetPagination
 
 
 class SnippetViewSet(viewsets.ModelViewSet):
@@ -19,6 +20,7 @@ class SnippetViewSet(viewsets.ModelViewSet):
     serializer_class = SnippetSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly,
                           IsOwnerOrReadOnly]
+    pagination_class = LimitOffsetPagination
 
     @action(detail=True, renderer_classes=[renderers.StaticHTMLRenderer])
     def highlight(self, request, *args, **kwargs):
