@@ -136,9 +136,11 @@ INTERNAL_IPS = [
 
 ACTIVITY_LIST_PAGINATOR = int(os.environ.get('ACTIVITY_LIST_PAGINATOR', '20'))
 
+REST_FRAMEWORK_PAGINATOR = int(os.environ.get('REST_FRAMEWORK_PAGINATOR', '20'))
+
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10
+    'PAGE_SIZE': REST_FRAMEWORK_PAGINATOR
 }
 
 django_heroku.settings(locals())
