@@ -25,3 +25,5 @@ whitenoise==5.2.0
 djangorestframework==3.12.2
 pygments==2.8.1
 httpie==2.4.0
+graphene==2.1.8
+graphene-django==2.15.0

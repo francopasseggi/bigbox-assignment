@@ -34,6 +34,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'quickstart',
     'snippets.apps.SnippetsConfig',
+    'ingredients',
+    'graphene_django',
     
 ]
 
@@ -68,20 +70,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'myproject.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'bigbox-db',
-#         'USER': 'postgres',
-#         'PASSWORD': 'P4Cl4',
-#         'HOST': '127.0.0.1',
-#         'PORT': '5432'
-#     }
-# }
 
 DATABASES = {
     "default": {
@@ -139,6 +127,10 @@ ACTIVITY_LIST_PAGINATOR = int(os.environ.get('ACTIVITY_LIST_PAGINATOR', '20'))
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
+}
+
+GRAPHENE = {
+    "SCHEMA": "myproject.schema.schema"
 }
 
 django_heroku.settings(locals())
